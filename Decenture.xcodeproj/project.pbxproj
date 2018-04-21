@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		13574102B0144304B0AB561E /* Pods_Decenture.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 41090B6697A7FE2051EC7A51 /* Pods_Decenture.framework */; };
+		3319C39877C97CD7859E9399 /* Pods_DecentureUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D18E7C73128F4A92A384E63D /* Pods_DecentureUITests.framework */; };
+		46A8A48724BB1F79954E223D /* Pods_DecentureTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DB622298B1625966EC16F0E6 /* Pods_DecentureTests.framework */; };
 		95CE5BF9208B37CA00EBC482 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95CE5BF8208B37CA00EBC482 /* AppDelegate.swift */; };
 		95CE5BFB208B37CA00EBC482 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95CE5BFA208B37CA00EBC482 /* ViewController.swift */; };
 		95CE5BFE208B37CA00EBC482 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 95CE5BFC208B37CA00EBC482 /* Main.storyboard */; };
@@ -34,6 +37,12 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		1CDF85A75B2827E1C250C904 /* Pods-Decenture.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Decenture.release.xcconfig"; path = "Pods/Target Support Files/Pods-Decenture/Pods-Decenture.release.xcconfig"; sourceTree = "<group>"; };
+		41090B6697A7FE2051EC7A51 /* Pods_Decenture.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Decenture.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		41B8E7A76B4E192570C01135 /* Pods-DecentureTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DecentureTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-DecentureTests/Pods-DecentureTests.debug.xcconfig"; sourceTree = "<group>"; };
+		4F1D8394048CD75E54E27B3E /* Pods-Decenture.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Decenture.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Decenture/Pods-Decenture.debug.xcconfig"; sourceTree = "<group>"; };
+		532953F198C423D0F43EB5FC /* Pods-DecentureUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DecentureUITests.release.xcconfig"; path = "Pods/Target Support Files/Pods-DecentureUITests/Pods-DecentureUITests.release.xcconfig"; sourceTree = "<group>"; };
+		63D4B04D513DC2E42B066EE3 /* Pods-DecentureTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DecentureTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-DecentureTests/Pods-DecentureTests.release.xcconfig"; sourceTree = "<group>"; };
 		95CE5BF5208B37C900EBC482 /* Decenture.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Decenture.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		95CE5BF8208B37CA00EBC482 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		95CE5BFA208B37CA00EBC482 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -47,6 +56,9 @@
 		95CE5C14208B37CA00EBC482 /* DecentureUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = DecentureUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		95CE5C18208B37CA00EBC482 /* DecentureUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DecentureUITests.swift; sourceTree = "<group>"; };
 		95CE5C1A208B37CA00EBC482 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		A6F90E60474B5E5DC3B6D7FD /* Pods-DecentureUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DecentureUITests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-DecentureUITests/Pods-DecentureUITests.debug.xcconfig"; sourceTree = "<group>"; };
+		D18E7C73128F4A92A384E63D /* Pods_DecentureUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_DecentureUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		DB622298B1625966EC16F0E6 /* Pods_DecentureTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_DecentureTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -54,6 +66,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				13574102B0144304B0AB561E /* Pods_Decenture.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -61,6 +74,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				46A8A48724BB1F79954E223D /* Pods_DecentureTests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -68,12 +82,26 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				3319C39877C97CD7859E9399 /* Pods_DecentureUITests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		29E49E10EED3439784FFD370 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				4F1D8394048CD75E54E27B3E /* Pods-Decenture.debug.xcconfig */,
+				1CDF85A75B2827E1C250C904 /* Pods-Decenture.release.xcconfig */,
+				41B8E7A76B4E192570C01135 /* Pods-DecentureTests.debug.xcconfig */,
+				63D4B04D513DC2E42B066EE3 /* Pods-DecentureTests.release.xcconfig */,
+				A6F90E60474B5E5DC3B6D7FD /* Pods-DecentureUITests.debug.xcconfig */,
+				532953F198C423D0F43EB5FC /* Pods-DecentureUITests.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
 		95CE5BEC208B37C900EBC482 = {
 			isa = PBXGroup;
 			children = (
@@ -81,6 +109,8 @@
 				95CE5C0C208B37CA00EBC482 /* DecentureTests */,
 				95CE5C17208B37CA00EBC482 /* DecentureUITests */,
 				95CE5BF6208B37C900EBC482 /* Products */,
+				29E49E10EED3439784FFD370 /* Pods */,
+				C3FFE379FD5D58DA0680174B /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -125,6 +155,16 @@
 			path = DecentureUITests;
 			sourceTree = "<group>";
 		};
+		C3FFE379FD5D58DA0680174B /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				41090B6697A7FE2051EC7A51 /* Pods_Decenture.framework */,
+				DB622298B1625966EC16F0E6 /* Pods_DecentureTests.framework */,
+				D18E7C73128F4A92A384E63D /* Pods_DecentureUITests.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -132,9 +172,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 95CE5C1D208B37CA00EBC482 /* Build configuration list for PBXNativeTarget "Decenture" */;
 			buildPhases = (
+				20230F5233A047F21494947B /* [CP] Check Pods Manifest.lock */,
 				95CE5BF1208B37C900EBC482 /* Sources */,
 				95CE5BF2208B37C900EBC482 /* Frameworks */,
 				95CE5BF3208B37C900EBC482 /* Resources */,
+				52C3A496F5A39BA831C45569 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -149,6 +191,7 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 95CE5C20208B37CA00EBC482 /* Build configuration list for PBXNativeTarget "DecentureTests" */;
 			buildPhases = (
+				6F677E06842D33850DEEC1BB /* [CP] Check Pods Manifest.lock */,
 				95CE5C05208B37CA00EBC482 /* Sources */,
 				95CE5C06208B37CA00EBC482 /* Frameworks */,
 				95CE5C07208B37CA00EBC482 /* Resources */,
@@ -167,6 +210,7 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 95CE5C23208B37CA00EBC482 /* Build configuration list for PBXNativeTarget "DecentureUITests" */;
 			buildPhases = (
+				D92BE7FA8EEB689D5FF6EB23 /* [CP] Check Pods Manifest.lock */,
 				95CE5C10208B37CA00EBC482 /* Sources */,
 				95CE5C11208B37CA00EBC482 /* Frameworks */,
 				95CE5C12208B37CA00EBC482 /* Resources */,
@@ -250,6 +294,83 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		20230F5233A047F21494947B /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-Decenture-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		52C3A496F5A39BA831C45569 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${SRCROOT}/Pods/Target Support Files/Pods-Decenture/Pods-Decenture-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/Alamofire/Alamofire.framework",
+				"${BUILT_PRODUCTS_DIR}/SnapKit/SnapKit.framework",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Alamofire.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SnapKit.framework",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Decenture/Pods-Decenture-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		6F677E06842D33850DEEC1BB /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-DecentureTests-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		D92BE7FA8EEB689D5FF6EB23 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-DecentureUITests-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		95CE5BF1208B37C900EBC482 /* Sources */ = {
@@ -428,15 +549,13 @@
 		};
 		95CE5C1E208B37CA00EBC482 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 4F1D8394048CD75E54E27B3E /* Pods-Decenture.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = VV43A4RM8L;
 				INFOPLIST_FILE = Decenture/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-				);
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = uk.blockchainers.Decenture;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.0;
@@ -446,15 +565,13 @@
 		};
 		95CE5C1F208B37CA00EBC482 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 1CDF85A75B2827E1C250C904 /* Pods-Decenture.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = VV43A4RM8L;
 				INFOPLIST_FILE = Decenture/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-				);
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = uk.blockchainers.Decenture;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.0;
@@ -464,17 +581,14 @@
 		};
 		95CE5C21208B37CA00EBC482 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 41B8E7A76B4E192570C01135 /* Pods-DecentureTests.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = VV43A4RM8L;
 				INFOPLIST_FILE = DecentureTests/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-					"@loader_path/Frameworks",
-				);
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = uk.blockchainers.DecentureTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.0;
@@ -485,17 +599,14 @@
 		};
 		95CE5C22208B37CA00EBC482 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 63D4B04D513DC2E42B066EE3 /* Pods-DecentureTests.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = VV43A4RM8L;
 				INFOPLIST_FILE = DecentureTests/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-					"@loader_path/Frameworks",
-				);
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = uk.blockchainers.DecentureTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.0;
@@ -506,16 +617,13 @@
 		};
 		95CE5C24208B37CA00EBC482 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = A6F90E60474B5E5DC3B6D7FD /* Pods-DecentureUITests.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = VV43A4RM8L;
 				INFOPLIST_FILE = DecentureUITests/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-					"@loader_path/Frameworks",
-				);
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = uk.blockchainers.DecentureUITests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.0;
@@ -526,16 +634,13 @@
 		};
 		95CE5C25208B37CA00EBC482 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 532953F198C423D0F43EB5FC /* Pods-DecentureUITests.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = VV43A4RM8L;
 				INFOPLIST_FILE = DecentureUITests/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-					"@loader_path/Frameworks",
-				);
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = uk.blockchainers.DecentureUITests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.0;

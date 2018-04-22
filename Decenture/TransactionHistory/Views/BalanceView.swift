@@ -9,6 +9,11 @@
 import UIKit
 import SnapKit
 
+protocol BalanceViewDelegate: class {
+  func balanceViewDidTapSend(_ balanceView: BalanceView)
+  func balanceViewDidTapRecieve(_ balanceView: BalanceView)
+}
+
 class BalanceView: UIView {
   
   // MARK: - UI Components
@@ -42,6 +47,7 @@ class BalanceView: UIView {
     let button = UIButton()
     button.setTitle("+", for: .normal)
     button.titleLabel?.font = UIFont.systemFont(ofSize: 64, weight: .ultraLight)
+    button.addTarget(self, action: #selector(recieveButtonPressed), for: .touchUpInside)
     return button
   }()
 
@@ -49,10 +55,13 @@ class BalanceView: UIView {
     let button = UIButton()
     button.setTitle("-", for: .normal)
     button.titleLabel?.font = UIFont.systemFont(ofSize: 64, weight: .ultraLight)
+    button.addTarget(self, action: #selector(sendButtonPressed), for: .touchUpInside)
     return button
   }()
   
   // MARK: - Public Members
+  
+  weak var delegate: BalanceViewDelegate?
   
   var balance: Double = 0 {
     didSet {
@@ -110,6 +119,16 @@ class BalanceView: UIView {
       make.width.height.equalTo(recieveButton)
       make.leading.equalTo(recieveButton.snp.trailing).offset(15)
     }
+  }
+  
+  // MARK: - Actions
+  
+  @objc private func sendButtonPressed() {
+    delegate?.balanceViewDidTapSend(self)
+  }
+  
+  @objc private func recieveButtonPressed() {
+    delegate?.balanceViewDidTapRecieve(self)
   }
 
 }

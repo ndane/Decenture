@@ -43,6 +43,8 @@ class TransactionHistoryViewController: UIViewController {
     tableView.register(TransactionTableViewCell.self,
                        forCellReuseIdentifier: TransactionTableViewCell.reuseIdentifier)
     
+    balanceView.delegate = self
+    
     view.addSubview(tableView)
   }
 
@@ -57,15 +59,7 @@ class TransactionHistoryViewController: UIViewController {
     loadDetails()
     loadPayments()
   }
-  
-  // MARK: - Alerts
-  
-  private func presentAlert(text: String) {
-    let alert = UIAlertController(title: "Error", message: text, preferredStyle: .alert)
-    alert.addAction(UIAlertAction(title: "Dismiss", style: .default, handler: nil))
-    present(alert, animated: true)
-  }
-
+    
   // MARK: - Networking
   
   private func loadDetails() {
@@ -232,6 +226,19 @@ extension TransactionHistoryViewController: UITableViewDataSource {
     cell.payment = payments[indexPath.row]
 
     return cell
+  }
+
+}
+
+// MARK: - BalanceViewDelegate
+extension TransactionHistoryViewController: BalanceViewDelegate {
+
+  func balanceViewDidTapSend(_ balanceView: BalanceView) {
+    present(SendFundsViewController(), animated: true)
+  }
+  
+  func balanceViewDidTapRecieve(_ balanceView: BalanceView) {
+    present(RecieveFundsViewController(), animated: true)
   }
 
 }

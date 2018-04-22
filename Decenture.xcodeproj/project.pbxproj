@@ -16,6 +16,9 @@
 		95226883208C94F9003A2244 /* BalanceView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95226882208C94F9003A2244 /* BalanceView.swift */; };
 		95226886208CAA34003A2244 /* Account.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95226885208CAA34003A2244 /* Account.swift */; };
 		95226888208CADBB003A2244 /* StellarManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95226887208CADBB003A2244 /* StellarManager.swift */; };
+		9522688D208CC89C003A2244 /* SendFundsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9522688C208CC89C003A2244 /* SendFundsViewController.swift */; };
+		9522688F208CC8D0003A2244 /* ReceiveFundsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9522688E208CC8D0003A2244 /* ReceiveFundsViewController.swift */; };
+		9573DA21208CD1630003CB92 /* UIViewController+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9573DA20208CD1630003CB92 /* UIViewController+Extensions.swift */; };
 		95CE5BF9208B37CA00EBC482 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95CE5BF8208B37CA00EBC482 /* AppDelegate.swift */; };
 		95CE5BFB208B37CA00EBC482 /* TransactionHistoryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95CE5BFA208B37CA00EBC482 /* TransactionHistoryViewController.swift */; };
 		95CE5C00208B37CA00EBC482 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 95CE5BFF208B37CA00EBC482 /* Assets.xcassets */; };
@@ -54,6 +57,9 @@
 		95226882208C94F9003A2244 /* BalanceView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BalanceView.swift; sourceTree = "<group>"; };
 		95226885208CAA34003A2244 /* Account.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Account.swift; sourceTree = "<group>"; };
 		95226887208CADBB003A2244 /* StellarManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StellarManager.swift; sourceTree = "<group>"; };
+		9522688C208CC89C003A2244 /* SendFundsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SendFundsViewController.swift; sourceTree = "<group>"; };
+		9522688E208CC8D0003A2244 /* ReceiveFundsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReceiveFundsViewController.swift; sourceTree = "<group>"; };
+		9573DA20208CD1630003CB92 /* UIViewController+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+Extensions.swift"; sourceTree = "<group>"; };
 		95CE5BF5208B37C900EBC482 /* Decenture.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Decenture.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		95CE5BF8208B37CA00EBC482 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		95CE5BFA208B37CA00EBC482 /* TransactionHistoryViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransactionHistoryViewController.swift; sourceTree = "<group>"; };
@@ -143,6 +149,7 @@
 			isa = PBXGroup;
 			children = (
 				9522687F208C92AE003A2244 /* UIColor+RGBA.swift */,
+				9573DA20208CD1630003CB92 /* UIViewController+Extensions.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -162,6 +169,22 @@
 				95226887208CADBB003A2244 /* StellarManager.swift */,
 			);
 			path = Singletons;
+			sourceTree = "<group>";
+		};
+		9522688A208CC864003A2244 /* SendFunds */ = {
+			isa = PBXGroup;
+			children = (
+				9522688C208CC89C003A2244 /* SendFundsViewController.swift */,
+			);
+			path = SendFunds;
+			sourceTree = "<group>";
+		};
+		9522688B208CC87E003A2244 /* ReceiveFunds */ = {
+			isa = PBXGroup;
+			children = (
+				9522688E208CC8D0003A2244 /* ReceiveFundsViewController.swift */,
+			);
+			path = ReceiveFunds;
 			sourceTree = "<group>";
 		};
 		95CE5BEC208B37C900EBC482 = {
@@ -189,8 +212,10 @@
 		95CE5BF7208B37C900EBC482 /* Decenture */ = {
 			isa = PBXGroup;
 			children = (
-				95226889208CB0D5003A2244 /* Singletons */,
 				9522687B208C9222003A2244 /* Common */,
+				9522688B208CC87E003A2244 /* ReceiveFunds */,
+				9522688A208CC864003A2244 /* SendFunds */,
+				95226889208CB0D5003A2244 /* Singletons */,
 				95226877208C8EB1003A2244 /* TransactionHistory */,
 				95CE5BF8208B37CA00EBC482 /* AppDelegate.swift */,
 				95CE5BFF208B37CA00EBC482 /* Assets.xcassets */,
@@ -441,13 +466,16 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9522688D208CC89C003A2244 /* SendFundsViewController.swift in Sources */,
 				95CE5BFB208B37CA00EBC482 /* TransactionHistoryViewController.swift in Sources */,
 				95226888208CADBB003A2244 /* StellarManager.swift in Sources */,
 				9522687D208C9231003A2244 /* UIColor+Discoin.swift in Sources */,
 				95226880208C92AE003A2244 /* UIColor+RGBA.swift in Sources */,
 				95226883208C94F9003A2244 /* BalanceView.swift in Sources */,
+				9573DA21208CD1630003CB92 /* UIViewController+Extensions.swift in Sources */,
 				9522687A208C8ED4003A2244 /* TransactionTableViewCell.swift in Sources */,
 				95CE5BF9208B37CA00EBC482 /* AppDelegate.swift in Sources */,
+				9522688F208CC8D0003A2244 /* ReceiveFundsViewController.swift in Sources */,
 				95226886208CAA34003A2244 /* Account.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

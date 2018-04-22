@@ -118,7 +118,9 @@ class TransactionHistoryViewController: UIViewController {
     }
     
     let stellar = StellarManager.shared.stellar
-    stellar.payments.stream(for: .paymentsForAccount(account: keyPair.accountId, cursor: nil)).onReceive { response in
+    stellar.payments.stream(for: .paymentsForAccount(account: keyPair.accountId, cursor: nil)).onReceive { [weak self] response in
+      guard let `self` = self else { return }
+
       switch response {
       case .open:
         break
@@ -132,9 +134,9 @@ class TransactionHistoryViewController: UIViewController {
             self.loadDetails()
           }
         }
-        
-      case .error(let error):
-        self.presentAlert(text: error?.localizedDescription ?? "Account stream had some strange error")
+
+      case .error:
+        break
       }
     }
   }

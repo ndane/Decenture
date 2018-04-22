@@ -18,12 +18,18 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
                    didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
     // Override point for customization after application launch.
     window = UIWindow(frame: UIScreen.main.bounds)
+    window?.backgroundColor = .white
+
+    let transactionNavigationController = UINavigationController(rootViewController: TransactionHistoryViewController())
+    transactionNavigationController.isNavigationBarHidden = true
     
-    let navigationController =  UINavigationController(rootViewController: TransactionHistoryViewController())
-    navigationController.isNavigationBarHidden = true
+    let tabBarController = UITabBarController()
+    tabBarController.viewControllers = [
+      transactionNavigationController
+    ]
     
     getAccount {
-      self.window?.rootViewController = navigationController
+      self.window?.rootViewController = tabBarController
       self.window?.makeKeyAndVisible()
     }
 

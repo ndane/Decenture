@@ -85,19 +85,19 @@ class BalanceView: UIView {
   
   private func makeConstraints() {
     titleLabel.snp.makeConstraints { make in
-      make.leading.trailing.equalToSuperview().inset(45)
+      make.top.equalTo(safeAreaLayoutGuide.snp.top).offset(35)
+      make.leading.trailing.equalToSuperview().inset(15)
     }
     
     balanceLabel.snp.makeConstraints { make in
       make.leading.trailing.equalToSuperview().inset(25)
       make.top.equalTo(titleLabel.snp.bottom).offset(10)
-      make.bottom.equalToSuperview().inset(100)
     }
     
     buttonContainer.snp.makeConstraints { make in
       make.top.equalTo(balanceLabel.snp.bottom).offset(35)
-      make.bottom.equalToSuperview().inset(65)
       make.centerX.equalToSuperview()
+      make.bottom.equalToSuperview().inset(45)
     }
     
     recieveButton.snp.makeConstraints { make in

@@ -20,6 +20,8 @@ class BalanceView: UIView {
   
   private var iconImageView: UIImageView = {
     let imageView = UIImageView()
+    imageView.image = #imageLiteral(resourceName: "logo")
+    imageView.contentMode = .scaleAspectFill
     return imageView
   }()
   
@@ -36,10 +38,12 @@ class BalanceView: UIView {
     let label = UILabel()
     label.font = UIFont.systemFont(ofSize: 64, weight: .light)
     label.textColor = .white
-    label.textAlignment = .center
-    label.text = "£0.00"
+    label.textAlignment = .left
+    label.text = "0.00"
     return label
   }()
+  
+  private let balanceContainer = UIView()
   
   private var buttonContainer = UIView()
   
@@ -65,7 +69,7 @@ class BalanceView: UIView {
   
   var balance: Double = 0 {
     didSet {
-      balanceLabel.text = "£\(balance)"
+      balanceLabel.text = "\(balance)"
     }
   }
 
@@ -84,27 +88,37 @@ class BalanceView: UIView {
   private func initLayout() {
     backgroundColor = UIColor.discoin.green
     
-    [iconImageView,
-     titleLabel,
-     balanceLabel,
+    [titleLabel,
+     balanceContainer,
      buttonContainer].forEach(addSubview(_:))
     
+    [balanceLabel, iconImageView].forEach(balanceContainer.addSubview(_:))
     [recieveButton, sendButton].forEach(buttonContainer.addSubview(_:))
   }
   
   private func makeConstraints() {
-    titleLabel.snp.makeConstraints { make in
-      make.top.equalTo(safeAreaLayoutGuide.snp.top).offset(35)
-      make.leading.trailing.equalToSuperview().inset(15)
+    iconImageView.snp.makeConstraints { make in
+      make.width.height.equalTo(50)
+      make.leading.top.bottom.equalToSuperview()
     }
     
-    balanceLabel.snp.makeConstraints { make in
-      make.leading.trailing.equalToSuperview().inset(25)
+    titleLabel.snp.makeConstraints { make in
+      make.top.equalTo(safeAreaLayoutGuide.snp.top).offset(35)
+      make.leading.trailing.equalToSuperview()
+    }
+    
+    balanceContainer.snp.makeConstraints { make in
+      make.centerX.equalToSuperview()
       make.top.equalTo(titleLabel.snp.bottom).offset(10)
+    }
+
+    balanceLabel.snp.makeConstraints { make in
+      make.trailing.top.bottom.equalToSuperview()
+      make.leading.equalTo(iconImageView.snp.trailing).offset(10)
     }
     
     buttonContainer.snp.makeConstraints { make in
-      make.top.equalTo(balanceLabel.snp.bottom).offset(35)
+      make.top.equalTo(balanceContainer.snp.bottom).offset(35)
       make.centerX.equalToSuperview()
       make.bottom.equalToSuperview().inset(45)
     }

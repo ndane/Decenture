@@ -176,7 +176,7 @@ extension TransactionHistoryViewController: UITableViewDelegate {
       tableView.backgroundColor = .white
     }
     
-    if indexPath.row == 0 {
+    if indexPath.row == 0 && payments.count > 10 {
       tableView.backgroundColor = UIColor.discoin.green
     }
   }

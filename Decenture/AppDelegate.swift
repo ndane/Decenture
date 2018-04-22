@@ -23,19 +23,14 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     let transactionNavigationController = UINavigationController(rootViewController: TransactionHistoryViewController())
     transactionNavigationController.isNavigationBarHidden = true
     
-    let tabBarController = UITabBarController()
-    tabBarController.viewControllers = [
-      transactionNavigationController
-    ]
-    
     getAccount {
-      self.window?.rootViewController = tabBarController
+      self.window?.rootViewController = transactionNavigationController
       self.window?.makeKeyAndVisible()
     }
 
     return true
   }
-  
+
   private func getAccount(_ completion: @escaping () -> Void) {
     let mnemonic = UserDefaults.standard.string(forKey: "mnemonic") ?? Wallet.generate24WordMnemonic()
     UserDefaults.standard.set(mnemonic, forKey: "mnemonic")
@@ -45,6 +40,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     do {
       let keyPair = try Wallet.createKeyPair(mnemonic: mnemonic, passphrase: nil, index: 0)
       Account.shared.keyPair = keyPair
+      print("\(keyPair.accountId)\n\(keyPair.secretSeed)")
 
       if accountAlreadyCreated == false {
         let stellar = StellarManager.shared.stellar

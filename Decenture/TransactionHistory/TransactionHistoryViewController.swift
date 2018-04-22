@@ -128,7 +128,7 @@ class TransactionHistoryViewController: UIViewController {
       }
     }
     
-    self.payments = payments
+    self.payments = payments.reversed()
     tableView.reloadData()
   }
   

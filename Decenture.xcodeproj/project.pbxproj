@@ -10,9 +10,12 @@
 		13574102B0144304B0AB561E /* Pods_Decenture.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 41090B6697A7FE2051EC7A51 /* Pods_Decenture.framework */; };
 		3319C39877C97CD7859E9399 /* Pods_DecentureUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D18E7C73128F4A92A384E63D /* Pods_DecentureUITests.framework */; };
 		46A8A48724BB1F79954E223D /* Pods_DecentureTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DB622298B1625966EC16F0E6 /* Pods_DecentureTests.framework */; };
+		9522687A208C8ED4003A2244 /* TransactionTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95226879208C8ED4003A2244 /* TransactionTableViewCell.swift */; };
+		9522687D208C9231003A2244 /* UIColor+Discoin.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9522687C208C9231003A2244 /* UIColor+Discoin.swift */; };
+		95226880208C92AE003A2244 /* UIColor+RGBA.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9522687F208C92AE003A2244 /* UIColor+RGBA.swift */; };
+		95226883208C94F9003A2244 /* BalanceView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95226882208C94F9003A2244 /* BalanceView.swift */; };
 		95CE5BF9208B37CA00EBC482 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95CE5BF8208B37CA00EBC482 /* AppDelegate.swift */; };
-		95CE5BFB208B37CA00EBC482 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95CE5BFA208B37CA00EBC482 /* ViewController.swift */; };
-		95CE5BFE208B37CA00EBC482 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 95CE5BFC208B37CA00EBC482 /* Main.storyboard */; };
+		95CE5BFB208B37CA00EBC482 /* TransactionHistoryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95CE5BFA208B37CA00EBC482 /* TransactionHistoryViewController.swift */; };
 		95CE5C00208B37CA00EBC482 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 95CE5BFF208B37CA00EBC482 /* Assets.xcassets */; };
 		95CE5C03208B37CA00EBC482 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 95CE5C01208B37CA00EBC482 /* LaunchScreen.storyboard */; };
 		95CE5C0E208B37CA00EBC482 /* DecentureTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95CE5C0D208B37CA00EBC482 /* DecentureTests.swift */; };
@@ -43,10 +46,13 @@
 		4F1D8394048CD75E54E27B3E /* Pods-Decenture.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Decenture.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Decenture/Pods-Decenture.debug.xcconfig"; sourceTree = "<group>"; };
 		532953F198C423D0F43EB5FC /* Pods-DecentureUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DecentureUITests.release.xcconfig"; path = "Pods/Target Support Files/Pods-DecentureUITests/Pods-DecentureUITests.release.xcconfig"; sourceTree = "<group>"; };
 		63D4B04D513DC2E42B066EE3 /* Pods-DecentureTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DecentureTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-DecentureTests/Pods-DecentureTests.release.xcconfig"; sourceTree = "<group>"; };
+		95226879208C8ED4003A2244 /* TransactionTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransactionTableViewCell.swift; sourceTree = "<group>"; };
+		9522687C208C9231003A2244 /* UIColor+Discoin.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColor+Discoin.swift"; sourceTree = "<group>"; };
+		9522687F208C92AE003A2244 /* UIColor+RGBA.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColor+RGBA.swift"; sourceTree = "<group>"; };
+		95226882208C94F9003A2244 /* BalanceView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BalanceView.swift; sourceTree = "<group>"; };
 		95CE5BF5208B37C900EBC482 /* Decenture.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Decenture.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		95CE5BF8208B37CA00EBC482 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		95CE5BFA208B37CA00EBC482 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
-		95CE5BFD208B37CA00EBC482 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		95CE5BFA208B37CA00EBC482 /* TransactionHistoryViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransactionHistoryViewController.swift; sourceTree = "<group>"; };
 		95CE5BFF208B37CA00EBC482 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		95CE5C02208B37CA00EBC482 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		95CE5C04208B37CA00EBC482 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -102,6 +108,49 @@
 			name = Pods;
 			sourceTree = "<group>";
 		};
+		95226877208C8EB1003A2244 /* TransactionHistory */ = {
+			isa = PBXGroup;
+			children = (
+				95226881208C94E8003A2244 /* Views */,
+				95226878208C8EBB003A2244 /* Cells */,
+				95CE5BFA208B37CA00EBC482 /* TransactionHistoryViewController.swift */,
+			);
+			path = TransactionHistory;
+			sourceTree = "<group>";
+		};
+		95226878208C8EBB003A2244 /* Cells */ = {
+			isa = PBXGroup;
+			children = (
+				95226879208C8ED4003A2244 /* TransactionTableViewCell.swift */,
+			);
+			path = Cells;
+			sourceTree = "<group>";
+		};
+		9522687B208C9222003A2244 /* Common */ = {
+			isa = PBXGroup;
+			children = (
+				9522687E208C928B003A2244 /* Extensions */,
+				9522687C208C9231003A2244 /* UIColor+Discoin.swift */,
+			);
+			path = Common;
+			sourceTree = "<group>";
+		};
+		9522687E208C928B003A2244 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				9522687F208C92AE003A2244 /* UIColor+RGBA.swift */,
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
+		95226881208C94E8003A2244 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				95226882208C94F9003A2244 /* BalanceView.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
 		95CE5BEC208B37C900EBC482 = {
 			isa = PBXGroup;
 			children = (
@@ -127,9 +176,9 @@
 		95CE5BF7208B37C900EBC482 /* Decenture */ = {
 			isa = PBXGroup;
 			children = (
+				9522687B208C9222003A2244 /* Common */,
+				95226877208C8EB1003A2244 /* TransactionHistory */,
 				95CE5BF8208B37CA00EBC482 /* AppDelegate.swift */,
-				95CE5BFA208B37CA00EBC482 /* ViewController.swift */,
-				95CE5BFC208B37CA00EBC482 /* Main.storyboard */,
 				95CE5BFF208B37CA00EBC482 /* Assets.xcassets */,
 				95CE5C01208B37CA00EBC482 /* LaunchScreen.storyboard */,
 				95CE5C04208B37CA00EBC482 /* Info.plist */,
@@ -275,7 +324,6 @@
 			files = (
 				95CE5C03208B37CA00EBC482 /* LaunchScreen.storyboard in Resources */,
 				95CE5C00208B37CA00EBC482 /* Assets.xcassets in Resources */,
-				95CE5BFE208B37CA00EBC482 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -377,7 +425,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				95CE5BFB208B37CA00EBC482 /* ViewController.swift in Sources */,
+				95CE5BFB208B37CA00EBC482 /* TransactionHistoryViewController.swift in Sources */,
+				9522687D208C9231003A2244 /* UIColor+Discoin.swift in Sources */,
+				95226880208C92AE003A2244 /* UIColor+RGBA.swift in Sources */,
+				95226883208C94F9003A2244 /* BalanceView.swift in Sources */,
+				9522687A208C8ED4003A2244 /* TransactionTableViewCell.swift in Sources */,
 				95CE5BF9208B37CA00EBC482 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -414,14 +466,6 @@
 /* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
-		95CE5BFC208B37CA00EBC482 /* Main.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				95CE5BFD208B37CA00EBC482 /* Base */,
-			);
-			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
 		95CE5C01208B37CA00EBC482 /* LaunchScreen.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
@@ -555,8 +599,11 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = VV43A4RM8L;
 				INFOPLIST_FILE = Decenture/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = uk.blockchainers.Decenture;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = uk.blockchainers.Discoin;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -571,8 +618,11 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = VV43A4RM8L;
 				INFOPLIST_FILE = Decenture/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = uk.blockchainers.Decenture;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = uk.blockchainers.Discoin;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -588,7 +638,11 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = VV43A4RM8L;
 				INFOPLIST_FILE = DecentureTests/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
 				PRODUCT_BUNDLE_IDENTIFIER = uk.blockchainers.DecentureTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.0;
@@ -606,7 +660,11 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = VV43A4RM8L;
 				INFOPLIST_FILE = DecentureTests/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
 				PRODUCT_BUNDLE_IDENTIFIER = uk.blockchainers.DecentureTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.0;
@@ -623,7 +681,11 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = VV43A4RM8L;
 				INFOPLIST_FILE = DecentureUITests/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
 				PRODUCT_BUNDLE_IDENTIFIER = uk.blockchainers.DecentureUITests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.0;
@@ -640,7 +702,11 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = VV43A4RM8L;
 				INFOPLIST_FILE = DecentureUITests/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
 				PRODUCT_BUNDLE_IDENTIFIER = uk.blockchainers.DecentureUITests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.0;

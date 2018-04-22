@@ -36,8 +36,6 @@ class TransactionHistoryViewController: UIViewController {
   }
 
   private func initLayout() {
-    tableView.backgroundColor = UIColor.discoin.green
-
     tableView.contentInsetAdjustmentBehavior = .never
     tableView.separatorStyle = .none
     tableView.delegate = self
@@ -104,10 +102,39 @@ class TransactionHistoryViewController: UIViewController {
       case .success(let details):
         DispatchQueue.main.async {
           self.displayPayments(details.records)
+          self.startPaymentsStream()
         }
         
       case .failure(let error):
         self.presentAlert(text: error.localizedDescription)
+      }
+    }
+  }
+  
+  private func startPaymentsStream() {
+    guard let keyPair = Account.shared.keyPair else {
+      presentAlert(text: "Couldn't find your account ID")
+      return
+    }
+    
+    let stellar = StellarManager.shared.stellar
+    stellar.payments.stream(for: .paymentsForAccount(account: keyPair.accountId, cursor: nil)).onReceive { response in
+      switch response {
+      case .open:
+        break
+        
+      case .response(_, let operationResponse):
+        guard let payment = operationResponse as? PaymentOperationResponse else { return }
+        if payment.assetCode == "DISCOIN", self.payments.contains(payment) == false {
+          self.payments.insert(payment, at: 0)
+          DispatchQueue.main.async {
+            self.tableView.reloadData()
+            self.loadDetails()
+          }
+        }
+        
+      case .error(let error):
+        self.presentAlert(text: error?.localizedDescription ?? "Account stream had some strange error")
       }
     }
   }
@@ -130,6 +157,12 @@ class TransactionHistoryViewController: UIViewController {
     
     self.payments = payments.reversed()
     tableView.reloadData()
+    
+    if payments.count > 0 {
+      tableView.backgroundColor = UIColor.discoin.green
+    } else {
+      tableView.backgroundColor = .white
+    }
   }
   
 }

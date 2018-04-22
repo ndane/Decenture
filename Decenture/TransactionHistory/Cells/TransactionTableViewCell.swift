@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import stellarsdk
 
 class TransactionTableViewCell: UITableViewCell {
   
@@ -41,6 +42,14 @@ class TransactionTableViewCell: UITableViewCell {
     return label
   }()
   
+  // MARK: - Payments
+  
+  var payment: PaymentOperationResponse? {
+    didSet {
+      update()
+    }
+  }
+  
   // MARK: - Lifecycle
 
   override init(style: UITableViewCellStyle, reuseIdentifier: String?) {
@@ -60,11 +69,12 @@ class TransactionTableViewCell: UITableViewCell {
      dateLabel,
      priceLabel].forEach(addSubview(_:))
   }
-  
+
   private func makeConstraints() {
     nameLabel.snp.makeConstraints { make in
       make.top.equalToSuperview().inset(17)
       make.leading.equalToSuperview().inset(25)
+      make.width.lessThanOrEqualTo(200)
     }
     
     dateLabel.snp.makeConstraints { make in
@@ -76,6 +86,20 @@ class TransactionTableViewCell: UITableViewCell {
     priceLabel.snp.makeConstraints { make in
       make.trailing.equalToSuperview().inset(25)
       make.centerY.equalToSuperview()
+    }
+  }
+
+  private func update() {
+    guard let payment = payment else { return }
+
+    if payment.to == Account.shared.keyPair?.accountId ?? "" {
+      priceLabel.text = "+ £\(Double(payment.amount) ?? 0)"
+      priceLabel.textColor = UIColor.discoin.green
+      nameLabel.text = payment.from
+    } else {
+      priceLabel.text = "- £\(Double(payment.amount) ?? 0)"
+      priceLabel.textColor = UIColor.discoin.red
+      nameLabel.text = payment.to
     }
   }
 

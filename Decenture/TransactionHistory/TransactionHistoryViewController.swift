@@ -23,6 +23,10 @@ class TransactionHistoryViewController: UIViewController {
     return .lightContent
   }
   
+  // MARK: - Private Members
+  
+  private var payments: [PaymentOperationResponse] = []
+  
   // MARK: - Lifecycle
 
   override func loadView() {
@@ -52,7 +56,8 @@ class TransactionHistoryViewController: UIViewController {
   
   override func viewDidAppear(_ animated: Bool) {
     super.viewDidAppear(true)
-    loadBalance()
+    loadDetails()
+    loadPayments()
   }
   
   // MARK: - Alerts
@@ -65,7 +70,7 @@ class TransactionHistoryViewController: UIViewController {
 
   // MARK: - Networking
   
-  private func loadBalance() {
+  private func loadDetails() {
     guard let keyPair = Account.shared.keyPair else {
       presentAlert(text: "Couldn't find your account ID")
       return
@@ -77,10 +82,8 @@ class TransactionHistoryViewController: UIViewController {
       
       switch response {
       case .success(let details):
-        for balance in details.balances where balance.assetCode == "DISCOIN" {
-          DispatchQueue.main.async {
-            self.balanceView.balance = Double(balance.balance) ?? -1
-          }
+        DispatchQueue.main.async {
+          self.displayBalance(details)
         }
         
       case .failure(let error):
@@ -90,7 +93,43 @@ class TransactionHistoryViewController: UIViewController {
   }
   
   private func loadPayments() {
+    guard let keyPair = Account.shared.keyPair else {
+      presentAlert(text: "Couldn't find your account ID")
+      return
+    }
     
+    let stellar = StellarManager.shared.stellar
+    stellar.payments.getPayments(forAccount: keyPair.accountId) { response in
+      switch response {
+      case .success(let details):
+        DispatchQueue.main.async {
+          self.displayPayments(details.records)
+        }
+        
+      case .failure(let error):
+        self.presentAlert(text: error.localizedDescription)
+      }
+    }
+  }
+  
+  private func displayBalance(_ details: AccountResponse) {
+    for balance in details.balances where balance.assetCode == "DISCOIN" {
+      balanceView.balance = Double(balance.balance) ?? -1
+    }
+  }
+  
+  private func displayPayments(_ details: [OperationResponse]) {
+    var payments: [PaymentOperationResponse] = []
+
+    for record in details {
+      guard let record = record as? PaymentOperationResponse else { continue }
+      if record.assetCode == "DISCOIN" {
+        payments.append(record)
+      }
+    }
+    
+    self.payments = payments
+    tableView.reloadData()
   }
   
 }
@@ -138,11 +177,12 @@ extension TransactionHistoryViewController: UITableViewDataSource {
   }
 
   func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-    return 30
+    return payments.count
   }
   
   func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-    guard let cell = tableView.dequeueReusableCell(withIdentifier: TransactionTableViewCell.reuseIdentifier) else {
+    guard let cell = tableView.dequeueReusableCell(withIdentifier: TransactionTableViewCell.reuseIdentifier)
+      as? TransactionTableViewCell else {
       fatalError("You probably forgot to register this cell class.")
     }
     
@@ -152,6 +192,9 @@ extension TransactionHistoryViewController: UITableViewDataSource {
     } else {
       cell.backgroundColor = .white
     }
+    
+    guard indexPath.row < payments.count else { return cell }
+    cell.payment = payments[indexPath.row]
 
     return cell
   }

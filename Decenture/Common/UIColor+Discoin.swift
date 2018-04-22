@@ -22,6 +22,10 @@ public struct DiscoinColors {
     return UIColor(rgbaValue: 0x7A979CFF)
   }
   
+  public static var red: UIColor {
+    return UIColor(rgbaValue: 0xE34D4DFF)
+  }
+  
 }
 
 extension UIColor {

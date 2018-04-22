@@ -14,6 +14,8 @@
 		9522687D208C9231003A2244 /* UIColor+Discoin.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9522687C208C9231003A2244 /* UIColor+Discoin.swift */; };
 		95226880208C92AE003A2244 /* UIColor+RGBA.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9522687F208C92AE003A2244 /* UIColor+RGBA.swift */; };
 		95226883208C94F9003A2244 /* BalanceView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95226882208C94F9003A2244 /* BalanceView.swift */; };
+		95226886208CAA34003A2244 /* Account.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95226885208CAA34003A2244 /* Account.swift */; };
+		95226888208CADBB003A2244 /* StellarManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95226887208CADBB003A2244 /* StellarManager.swift */; };
 		95CE5BF9208B37CA00EBC482 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95CE5BF8208B37CA00EBC482 /* AppDelegate.swift */; };
 		95CE5BFB208B37CA00EBC482 /* TransactionHistoryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95CE5BFA208B37CA00EBC482 /* TransactionHistoryViewController.swift */; };
 		95CE5C00208B37CA00EBC482 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 95CE5BFF208B37CA00EBC482 /* Assets.xcassets */; };
@@ -50,6 +52,8 @@
 		9522687C208C9231003A2244 /* UIColor+Discoin.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColor+Discoin.swift"; sourceTree = "<group>"; };
 		9522687F208C92AE003A2244 /* UIColor+RGBA.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColor+RGBA.swift"; sourceTree = "<group>"; };
 		95226882208C94F9003A2244 /* BalanceView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BalanceView.swift; sourceTree = "<group>"; };
+		95226885208CAA34003A2244 /* Account.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Account.swift; sourceTree = "<group>"; };
+		95226887208CADBB003A2244 /* StellarManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StellarManager.swift; sourceTree = "<group>"; };
 		95CE5BF5208B37C900EBC482 /* Decenture.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Decenture.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		95CE5BF8208B37CA00EBC482 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		95CE5BFA208B37CA00EBC482 /* TransactionHistoryViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransactionHistoryViewController.swift; sourceTree = "<group>"; };
@@ -151,6 +155,15 @@
 			path = Views;
 			sourceTree = "<group>";
 		};
+		95226889208CB0D5003A2244 /* Singletons */ = {
+			isa = PBXGroup;
+			children = (
+				95226885208CAA34003A2244 /* Account.swift */,
+				95226887208CADBB003A2244 /* StellarManager.swift */,
+			);
+			path = Singletons;
+			sourceTree = "<group>";
+		};
 		95CE5BEC208B37C900EBC482 = {
 			isa = PBXGroup;
 			children = (
@@ -176,6 +189,7 @@
 		95CE5BF7208B37C900EBC482 /* Decenture */ = {
 			isa = PBXGroup;
 			children = (
+				95226889208CB0D5003A2244 /* Singletons */,
 				9522687B208C9222003A2244 /* Common */,
 				95226877208C8EB1003A2244 /* TransactionHistory */,
 				95CE5BF8208B37CA00EBC482 /* AppDelegate.swift */,
@@ -371,11 +385,13 @@
 				"${SRCROOT}/Pods/Target Support Files/Pods-Decenture/Pods-Decenture-frameworks.sh",
 				"${BUILT_PRODUCTS_DIR}/Alamofire/Alamofire.framework",
 				"${BUILT_PRODUCTS_DIR}/SnapKit/SnapKit.framework",
+				"${BUILT_PRODUCTS_DIR}/stellar-ios-mac-sdk/stellarsdk.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Alamofire.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SnapKit.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/stellarsdk.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
@@ -426,11 +442,13 @@
 			buildActionMask = 2147483647;
 			files = (
 				95CE5BFB208B37CA00EBC482 /* TransactionHistoryViewController.swift in Sources */,
+				95226888208CADBB003A2244 /* StellarManager.swift in Sources */,
 				9522687D208C9231003A2244 /* UIColor+Discoin.swift in Sources */,
 				95226880208C92AE003A2244 /* UIColor+RGBA.swift in Sources */,
 				95226883208C94F9003A2244 /* BalanceView.swift in Sources */,
 				9522687A208C8ED4003A2244 /* TransactionTableViewCell.swift in Sources */,
 				95CE5BF9208B37CA00EBC482 /* AppDelegate.swift in Sources */,
+				95226886208CAA34003A2244 /* Account.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

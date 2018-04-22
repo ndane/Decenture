@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import stellarsdk
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
@@ -20,11 +21,44 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     
     let navigationController =  UINavigationController(rootViewController: TransactionHistoryViewController())
     navigationController.isNavigationBarHidden = true
-
-    window?.rootViewController = navigationController
-    window?.makeKeyAndVisible()
+    
+    getAccount {
+      self.window?.rootViewController = navigationController
+      self.window?.makeKeyAndVisible()
+    }
 
     return true
+  }
+  
+  private func getAccount(_ completion: @escaping () -> Void) {
+    let mnemonic = UserDefaults.standard.string(forKey: "mnemonic") ?? Wallet.generate24WordMnemonic()
+    UserDefaults.standard.set(mnemonic, forKey: "mnemonic")
+
+    let accountAlreadyCreated = UserDefaults.standard.bool(forKey: "created")
+    
+    do {
+      let keyPair = try Wallet.createKeyPair(mnemonic: mnemonic, passphrase: nil, index: 0)
+      Account.shared.keyPair = keyPair
+
+      if accountAlreadyCreated == false {
+        let stellar = StellarManager.shared.stellar
+
+        stellar.accounts.createTestAccount(accountId: keyPair.accountId) { response in
+          switch response {
+          case .success:
+            UserDefaults.standard.set(true, forKey: "created")
+            DispatchQueue.main.async(execute: completion)
+
+          case .failure(let error):
+            print(error.localizedDescription)
+          }
+        }
+      } else {
+        completion()
+      }
+    } catch {
+      print("\(error.localizedDescription)")
+    }
   }
 
 }

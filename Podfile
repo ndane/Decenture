@@ -9,6 +9,7 @@ target 'Decenture' do
   # Pods for Decenture
   pod 'SnapKit', '~> 4.0.0'
   pod 'Alamofire', '~> 4.7'
+  pod 'stellar-ios-mac-sdk', '~> 1.1.3'
 
   target 'DecentureTests' do
     inherit! :search_paths

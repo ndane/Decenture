@@ -8,15 +8,22 @@
 
 import UIKit
 import SnapKit
+import stellarsdk
 
 class TransactionHistoryViewController: UIViewController {
+  
+  // MARK: - UI Components
 
   private lazy var tableView = UITableView(frame: .zero, style: .grouped)
   private lazy var balanceView = BalanceView()
   
+  // MARK: - Override Members
+  
   override var preferredStatusBarStyle: UIStatusBarStyle {
     return .lightContent
   }
+  
+  // MARK: - Lifecycle
 
   override func loadView() {
     super.loadView()
@@ -42,9 +49,53 @@ class TransactionHistoryViewController: UIViewController {
       make.edges.equalToSuperview()
     }
   }
+  
+  override func viewDidAppear(_ animated: Bool) {
+    super.viewDidAppear(true)
+    loadBalance()
+  }
+  
+  // MARK: - Alerts
+  
+  private func presentAlert(text: String) {
+    let alert = UIAlertController(title: "Error", message: text, preferredStyle: .alert)
+    alert.addAction(UIAlertAction(title: "Dismiss", style: .default, handler: nil))
+    present(alert, animated: true)
+  }
 
+  // MARK: - Networking
+  
+  private func loadBalance() {
+    guard let keyPair = Account.shared.keyPair else {
+      presentAlert(text: "Couldn't find your account ID")
+      return
+    }
+
+    let stellar = StellarManager.shared.stellar
+    stellar.accounts.getAccountDetails(accountId: keyPair.accountId) { [weak self] response in
+      guard let `self` = self else { return }
+      
+      switch response {
+      case .success(let details):
+        for balance in details.balances where balance.assetCode == "DISCOIN" {
+          DispatchQueue.main.async {
+            self.balanceView.balance = Double(balance.balance) ?? -1
+          }
+        }
+        
+      case .failure(let error):
+        self.presentAlert(text: error.localizedDescription)
+      }
+    }
+  }
+  
+  private func loadPayments() {
+    
+  }
+  
 }
 
+// MARK: - UITableViewDelegate
 extension TransactionHistoryViewController: UITableViewDelegate {
 
   func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
@@ -63,20 +114,21 @@ extension TransactionHistoryViewController: UITableViewDelegate {
   }
 }
 
+// MARK: - UITableViewDataSource
 extension TransactionHistoryViewController: UITableViewDataSource {
   
   func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
     return balanceView
   }
-  
+
   func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
-    return 300
+    return 350
   }
-  
+
   func tableView(_ tableView: UITableView, estimatedHeightForHeaderInSection section: Int) -> CGFloat {
-    return 300
+    return 350
   }
-  
+
   func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
     return UITableViewAutomaticDimension
   }

@@ -36,6 +36,22 @@ class BalanceView: UIView {
     return label
   }()
   
+  private var buttonContainer = UIView()
+  
+  private var recieveButton: UIButton = {
+    let button = UIButton()
+    button.setTitle("+", for: .normal)
+    button.titleLabel?.font = UIFont.systemFont(ofSize: 64, weight: .ultraLight)
+    return button
+  }()
+
+  private var sendButton: UIButton = {
+    let button = UIButton()
+    button.setTitle("-", for: .normal)
+    button.titleLabel?.font = UIFont.systemFont(ofSize: 64, weight: .ultraLight)
+    return button
+  }()
+  
   // MARK: - Public Members
   
   var balance: Double = 0 {
@@ -61,7 +77,10 @@ class BalanceView: UIView {
     
     [iconImageView,
      titleLabel,
-     balanceLabel].forEach(addSubview(_:))
+     balanceLabel,
+     buttonContainer].forEach(addSubview(_:))
+    
+    [recieveButton, sendButton].forEach(buttonContainer.addSubview(_:))
   }
   
   private func makeConstraints() {
@@ -73,6 +92,23 @@ class BalanceView: UIView {
       make.leading.trailing.equalToSuperview().inset(25)
       make.top.equalTo(titleLabel.snp.bottom).offset(10)
       make.bottom.equalToSuperview().inset(100)
+    }
+    
+    buttonContainer.snp.makeConstraints { make in
+      make.top.equalTo(balanceLabel.snp.bottom).offset(35)
+      make.bottom.equalToSuperview().inset(65)
+      make.centerX.equalToSuperview()
+    }
+    
+    recieveButton.snp.makeConstraints { make in
+      make.top.leading.bottom.equalToSuperview()
+      make.width.height.equalTo(56)
+    }
+    
+    sendButton.snp.makeConstraints { make in
+      make.top.trailing.bottom.equalToSuperview()
+      make.width.height.equalTo(recieveButton)
+      make.leading.equalTo(recieveButton.snp.trailing).offset(15)
     }
   }
 
